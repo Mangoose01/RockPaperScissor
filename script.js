@@ -1,70 +1,40 @@
-let randomNumber = Math.floor(Math.random()) + 1;
+let computerSelection;
+let playerSelection;
 
-  const guesses = document.querySelector('.guesses');
-  const lastResult = document.querySelector('.lastResult');
-  const lowOrHi = document.querySelector('lowOrHi');
-  const guessSubmit = document.querySelector('.guessSubmit');
-  const guessField = document.querySelector('.guessField');
-
-  let guessCount = 1;
-  let resetButton;
-
-  function checkGuess() {
-
-    let userGuess = Number(guessField.value);
-    if(guessCount === 1) {
-      guesses.textContent = 'Previous guesses: ';
-    }
-    guesses.textContent += userGuess + ' ';
-
-    if(userGuess === randomNumber) {
-      lastResult.textContent = 'Congratulations! You got it right!';
-      lastResult.style.backgroundColor = 'green';
-      lowOrHi.textContent = '';
-      setGameOver();
-    } else if(guessCount === 10) {
-      lastResult.textContent = '!!!GAME OVER!!!';
-      setGameOver();
-    } else {
-      lastResult.textContent = 'Wrong!';
-      lastResult.style.backgroundColor = 'red';
-      if(userGuess < randomNumber) {
-        lowOrHi.textContent = 'Last guess was too low!';
-      } else if(userGuess > randomNumber) {
-        lowOrHi.textContent = 'Last guess was too high!';
+  function game() {
+    const options = [ "rock" , "paper" , "scissors" ];
+    computerSelection = options[Math.floor(Math.random() * options.length )]
+    playerSelection = prompt("Rock, Paper or Scissors?",'');
+      if (playerSelection.toLowerCase() == "rock" && computerSelection == "scissors") {
+      alert("you win");
+      } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") {
+      alert("you lose");
+      } else if (playerSelection.toLowerCase() == "rock" && computerSelection == "rock") {
+      alert("draw")
+      } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "scissors") {
+      alert("you lose");
+      } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "paper") {
+      alert("draw");
+      } else if (playerSelection.toLowerCase() == "paper" && computerSelection == "rock") {
+      alert("you win");
+      } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "scissors") {
+      alert("draw");
+      } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "paper") {
+      alert("you win");
+      } else if (playerSelection.toLowerCase() == "scissors" && computerSelection == "rock") {
+      alert("you lose");
+      } else {
+      alert("You entered an incorrect answer!");
       }
-    }
-
-    guessCount++;
-    guessField.value = '';
-    guessField.focus();
   }
-  guessSubmit.addeventListener('click', checkGuess);
+  
+    game();
+    game();
+    game();
+    game();
+    game();
 
-  function setGameOver() {
-	  guessField.disabled = true;
-	  guessSubmit.disabled = true;
-	  resetButton = document.createElement('button');
-	  resetButton.textContent = 'Start new game';
-	  document.body.appendChild(resetButton);
-	  resetButton.addeventListener('click', resetGame);
-  }
-
-  function resetGame() {
-	  guessCount = 1;
-
-	  const resetParas = document.querySelectorAll('.resultParas p');
-	  for(let i = 0; i < resetParas.length; i++) {
-		  resetParas[i].textContent = '';
-	  }
-	  resetButton.parentNode.removeChild(resetButton);
-
-	  guessField.disabled = false;
-	  guessSubmit.disabled = false;
-	  guessField.value = '';
-	  guessField.focus();
-
-	  lastResult.style.backgroundColor = 'white';
-
-	  randomNumber = Math.floor(Math.random()) + 1;
-  }
+    document.writeln("Computer chose: " + computerSelection + "   ||||   ");
+    document.writeln("Player chose: " + playerSelection);
+  
+  
