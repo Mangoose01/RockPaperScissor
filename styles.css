@@ -1,0 +1,111 @@
+body {
+    background-image:url('https://i.gifer.com/QLr.gif');
+    background-size:100%;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    height:100%;
+    width:100%;
+}
+
+#leftscorebox {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 10vh;
+    width: 20vw;
+    border-radius: 15px;
+}
+
+#playerscore {
+    color: white;
+}
+
+#rightscorebox {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    background-color: black;
+    height: 10vh;
+    width: 20vw;
+    border-radius: 15px;
+}
+
+#computerscore {
+    color: white;
+}
+
+.properties {
+    font-size:large;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 30vw;
+    margin-right: 30vw;
+
+}
+
+#scoreboard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 12vh;
+    opacity: .9;
+}
+
+.btns {
+    height: 6vh;
+    width: 10vh;
+    transition-duration: .3s;
+    background-color:rgb(54, 53, 53);
+    opacity:.9;
+    color: white;
+    border-radius: 15px;
+    border-width: 5px;
+    border-color: black;
+    font-size: 16px;
+}
+
+.btns:hover {
+    background-color: white;
+    color: black;
+}
+
+#gap1 {
+    height: 8vh;
+}
+#gap2 {
+    height: 15vh;
+}
+
+#textbox {
+    height: 15vh;
+    margin-left: 20vh;
+    margin-right: 20vh;
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    opacity: .9;
+    border-radius: 15px;
+
+}
+
+#outcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    font-size: 20px;
+    
+}
